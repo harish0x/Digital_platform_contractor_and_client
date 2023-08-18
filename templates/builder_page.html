@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Builder Page</title>
+</head>
+<body>
+    <h1>Welcome, {{ builder.name }}!</h1>
+    <h2>Builder Page</h2>
+    <!-- Information from Client Login Page -->
+    <h3>Client Project Information:</h3>
+    <p>Type of Building: {{ client.building_type }}</p>
+    <p>Build Area: {{ client.build_area }}</p>
+    <p>Dimension: {{ client.dimension }}</p>
+    <p>Number of Floors: {{ client.no_floor }}</p>
+    <p>Budget: {{ client.budget }}</p>
+    <p>Description: {{client.description }}</p>
+    <p>Address: {{ client.address }}</p>
+    <br>
+    <!-- Builder Input Parameters -->
+    <form>
+        <label for="price">Price:</label>
+        <input type="text" name="price" required><br><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

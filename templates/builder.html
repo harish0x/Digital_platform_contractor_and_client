@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Current orders</title>
+    <!--Current orders page in Builder module-->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="D:\pro\style.css">
+</head>
+<body>
+    <div class="top-bar">
+        <a href="/builder-home">
+        <button> Home</button>
+    </a>
+        <a href="/builder-dashboard">
+        <button> Current orders</button>
+    </a>
+    </a>
+        <a href="/status">
+        <button> Update Status</button>
+    </a>
+        <a href="/build-status">
+        <button>Order Status</button>
+    </a>
+    <button class="logout-btn" onclick="logout()">Logout</button>
+    </div>
+ <!--  <div class="buldash">
+    <h1>Builder Dashboard</h1>
+    <table class="table">
+        <tr class="th ,td">
+            <th>Name</th>
+            <th>Building Type</th>
+            <th>Dimension</th>
+            <th>Number of Floors</th>
+            <th>Building Area</th>
+            <th>Description</th>
+            <th>Address</th>
+        </tr>
+        {% for data in building_data %}
+        <tr>
+            <td>{{ data.name }}</td>
+            <td>{{ data.building_type }}</td>
+            <td>{{ data.dimension }}</td>
+            <td>{{ data.num_floors }}</td>
+            <td>{{ data.building_area }}</td>
+            <td>{{ data.description }}</td>
+            <td>{{ data.address }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>-->
+<form method="POST" action="/builder-dashboard">
+    <label for="id">Building ID:</label>
+    <input type="text" name="id" id="id" required>
+    <button type="submit">Search</button>
+</form>
+
+{% if building_data %}
+    <h2>Building Details</h2>
+    <p>Building ID: {{ building_data.building_id }}</p>
+    <p>Name: {{ building_data.name }}</p>
+    <p>Building Type: {{ building_data.building_type }}</p>
+    <p>Dimension: {{ building_data.dimension }}</p>
+    <p>Number of Floors: {{ building_data.num_floors }}</p>
+    <p>Building Area: {{ building_data.building_area }}</p>
+    <p>Description: {{ building_data.description }}</p>
+    <p>Address: {{ building_data.address }}</p>
+{% endif %}
+
+{% if error %}
+    <p>{{ error }}</p>
+{% endif %}
+<script>
+    function logout() {
+        window.location.href = "/";
+    }
+</script>
+</body>
+</html>

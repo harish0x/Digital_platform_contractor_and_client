@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Building Status</title>
+    <!--Status of building in builder module-->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<!-- <body>
+    <h1>Building Status</h1>
+    <h2>Building ID: {{ building_id }}</h2>
+    
+    <h3>Status Text:</h3>
+    <p>{{ status_text }}</p>
+
+    <h3>Status Image:</h3>
+    {% if status_image %}
+        <img src="{{ url_for('static', filename='uploads/' + status_image) }}" alt="Building Status Image">
+    {% else %}
+        <p>No status image available.</p>
+    {% endif %}
+</body>
+</html> -->
+<body>
+    <div class="top-bar">
+        <a href="/builder-home">
+        <button> Home</button>
+    </a>
+        <a href="/client-dashboard">
+        <button> New order</button>
+    </a>
+    </a>
+        <a href="/your-projects">
+        <button> My orders</button>
+    </a>
+        <a href="/show-status">
+        <button>Order Status</button>
+    </a>
+</a>
+<a href="/shows">
+<button>Show builders</button>
+</a>
+    <button class="logout-btn" onclick="logout()">Logout</button>
+    </div>
+    <h1>Building Status</h1>
+    <div class="status">
+    
+    <table class="table-container">
+        <tr>
+            <th>Building ID</th>
+            <th>Building Status</th>
+            <th>Building Image</th>
+        </tr>
+        {% for data in building_data %}
+        <tr>
+            <td>{{ data.building_id }}</td>
+            <td>{{ data.status_text }}</td>
+            <td>
+                {% if data.status_image %}
+                    <img src="{{ url_for('static', filename='uploads/' + data.status_image) }}" alt="Building Status Image">
+                {% else %}
+                    No status image available.
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+<!--
+    {% for data in building_data %}
+    <p> Building id : 
+    {{data.building_id}}
+</p>
+<p> Building Status : 
+    {{data.status_text}}
+</p>
+<p> Building image :
+    {% if data.status_image %}
+        <img src="{{ url_for('static', filename='uploads/' + data.status_image) }}" alt="Building Status Image">
+    {% else %}
+        No status image available.
+</p>
+    {% endif %}
+    {% endfor %}
+
+    {{ building_id }}
+    {{ status_text }}
+    {{ status_image}}-->
+    </div>
+    <script>
+        function logout() {
+            window.location.href = "/";
+        }
+    </script>
+</body>
+</html>

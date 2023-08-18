@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Client Login</title>
+    <!--Client login-->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+     <link rel="stylesheet" href="D:\pro\style.css">
+</head>
+<body>
+    <div class="register">   
+    <form method="POST" class="form">
+        <h2>Client Login </h2> 
+        
+        <input type="text" placeholder="Username" id="username" name="username" required>
+        <br>
+        <input type="password" placeholder="password" id="password" name="password" required>
+        <br>
+        <button
+         type="submit" value="Login">Login
+        </button>
+    </form>
+</div><!--
+<script>
+    function showErrorBox(message) {
+        const errorBox = document.getElementById("errorBox");
+        errorBox.innerHTML = message;
+        errorBox.style.display = "block";
+    }
+
+    document.querySelector("form").addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+
+        if (username === "" || password === "") {
+            showErrorBox("Please enter both username and password.");
+            return;
+        }
+
+        // Your code to check the login information goes here.
+        // For demonstration purposes, let's assume the correct login credentials are "user123" and "password123".
+        // In a real-world scenario, you would send the username and password to the server for validation.
+
+        if (username === "user123" && password === "password123") {
+            alert("Login successful!"); // Show a success message (you can replace this with a custom message).
+            window.location.href = "/client-dashboard"; // Redirect to the client dashboard page.
+        } else {
+            showErrorBox("Wrong login information. Please try again.");
+        }
+    });
+</script>-->
+</body>
+</html>

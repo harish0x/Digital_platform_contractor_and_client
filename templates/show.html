@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Builders</title>
+    <!-- Show builders in Builder module-->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+    <div class="top-bar">
+        <a href="/client-home">
+        <button> Home</button>
+    </a>
+        <a href="/client-dashboard">
+        <button> New order</button>
+    </a>
+    </a>
+        <a href="/your-projects">
+        <button> My orders</button>
+    </a>
+        <a href="/show-status">
+        <button>Order Status</button>
+    </a>
+</a>
+<a href="/shows">
+<button>Show builders</button>
+</a>
+    <button class="logout-btn" onclick="logout()">Logout</button>
+    </div>
+    <h1>Flask App</h1>
+    {% for item in items %}
+    <div class="item">
+        <h2>{{ item['title'] }}</h2>
+        <p>Position: {{ item['position'] }}</p>
+        <p>Place ID: {{ item['place_id'] }}</p>
+        <p>Data ID: {{ item['data_id'] }}</p>
+        <p>Data CID: {{ item['data_cid'] }}</p>
+        <p>Reviews Link: "{{item['reviews_link'] }}"</p>
+        <p>Photos Link: {{ item['photos_link'] }}</p>
+        <p>GPS Coordinates: {{ item['gps_coordinates'] }}</p>
+        <p>Place ID Search: {{ item['place_id_search'] }}</p>
+        <p>Rating: {{ item['rating'] }}</p>
+        <p>Reviews: {{ item['reviews'] }}</p>
+        <p>Item Type: {{ item['item_type'] }}</p>
+        <p>Address: {{ item['address'] }}</p>
+        <p>Open State: {{ item['open_state'] }}</p>
+        <p>Hours: {{ item['hours'] }}</p>
+        <p>Operating Hours: {{ item['operating_hours'] }}</p>
+        <p>Phone: {{ item['phone'] }}</p>
+        <p>Photos: {{ item['service_options'] }}</p>
+        <img src="{{ item['thumbnail'] }}" alt="Thumbnail">
+    </div>
+    {% endfor %}
+    <script>
+        function logout() {
+            window.location.href = "/";
+        }
+    </script>
+</body>
+</html>

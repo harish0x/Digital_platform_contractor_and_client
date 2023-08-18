@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Builder Dashboard</title>
+    <!--Current order page in Builder module-->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="top-bar">
+        <a href="/builder-home">
+        <button> Home</button>
+    </a>
+        <a href="/builder-dashboard">
+        <button> Current orders</button>
+    </a>
+    </a>
+        <a href="/status">
+        <button> Update Status</button>
+    </a>
+    <a href="">
+        <button> Order Status</button>
+    </a>
+    <button class="logout-btn" onclick="logout()">Logout</button>
+    </div>
+    <h1>Builder Dashboard</h1>
+    {% for data in building_data %}
+    <div class="building">
+        <h2>{{ data.name }}</h2>
+        <p><strong>Building Type:</strong> {{ data.building_type }}</p>
+        <p><strong>Dimension:</strong> {{ data.dimension }}</p>
+        <p><strong>Number of Floors:</strong> {{ data.num_floors }}</p>
+        <p><strong>Building Area:</strong> {{ data.building_area }}</p>
+        <p><strong>Description:</strong> {{ data.description }}</p>
+        <p><strong>Address:</strong> {{ data.address }}</p>
+        <form method="POST" enctype="multipart/form-data">
+            <p>Building id : 
+            <input type="text" name="building_id" value="{{ data._id }}"></p>    
+            <label for="status_text">Status Text: </label><br>
+            <textarea id="status_text" name="status_text" rows="4" cols="50"></textarea><br><br>
+            <label for="status_image">Status Image: </label>
+            <input type="file" id="status_image" name="status_image">
+            <input type="submit" value="Update Status">
+        </form>
+    </div>
+    {% endfor %}
+    <script>
+        function logout() {
+            window.location.href = "/";
+        }
+    </script>
+</body>
+</html>

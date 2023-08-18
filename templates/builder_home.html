@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>  Builder home</title>
+    <!--Current orders page in Builder module-->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="D:\pro\style.css">
+</head>
+<body>
+    <div class="top-bar">
+        <a href="/builder-home">
+        <button> Home</button>
+    </a>
+        <a href="/builder-dashboard">
+        <button> Current orders</button>
+    </a>
+    </a>
+        <a href="/status">
+        <button> Update Status</button>
+    </a>
+        <a href="/build-status">
+        <button>Order Status</button>
+    </a>
+    <button class="logout-btn" onclick="logout()">Logout</button>
+    </div>
+
+    <h1>Welcome to the Builder login</h1>
+
+<p>Our building construction and tracking system revolutionizes the way clients engage in construction projects. We offer a streamlined and transparent process that empowers clients to easily build and track their dream buildings from start to finish.</p>
+
+<p>With our system, clients have the convenience of accessing all the necessary information and tools in one place. The client dashboard serves as the central hub where clients can initiate new building orders, monitor the progress of ongoing projects, and review completed projects. Our user-friendly interface ensures a seamless experience, even for those with limited technical expertise.</p>
+
+<p>Once a building order is placed, clients can track the status of their project in real-time. Our system provides detailed updates on each phase of construction, enabling clients to stay informed about the progress, any challenges encountered, and the estimated completion time. Additionally, clients can communicate directly with the construction team, ask questions, and provide feedback through the platform, fostering effective collaboration and timely resolution of any concerns.</p>
+
+<p>We prioritize transparency and accountability in our system. Each building project is assigned a unique ID, which clients can use to access comprehensive project documentation, including architectural plans, permits, and inspection reports. This centralized repository ensures all relevant information is readily available, eliminating the need for clients to search through scattered files or contact multiple parties for updates.</p>
+
+<p>At the heart of our system is a commitment to exceptional client satisfaction. We strive to exceed expectations by delivering high-quality construction, efficient project management, and open communication. Our building construction and tracking system empowers clients to actively participate in the construction process, providing them with the confidence and peace of mind they deserve.</p>
+
+    <script>
+        function logout() {
+            window.location.href = "/";
+        }
+    </script>
+    </body>
+    </html>

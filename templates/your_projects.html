@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Your Projects</title>
+    <!-- Your projects in Client module-->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="top-bar">
+        <a href="/client-home">
+        <button> Home</button>
+    </a>
+        <a href="/client-dashboard">
+        <button> New order</button>
+    </a>
+    </a>
+        <a href="/your-projects">
+        <button> My orders</button>
+    </a>
+        <a href="/show-status">
+        <button>Order Status</button>
+    </a>
+    <a href="/shows">
+        <button>Show builders</button>
+    </a>
+    <button class="logout-btn" onclick="logout()">Logout</button>
+    </div>
+    <h1>Your Projects</h1>
+    <p>Welcome, {{ session['username'] }}</p>
+    <form method="POST">
+    <label for="building_id">Building ID:</label>
+    <input type="text" id="building_id" name="building_id" required>
+    </form>
+    
+    <table>
+        <tr>
+            <th>Building Name</th>
+            <th>Building Type</th>
+            <th>Dimension</th>
+            <th>Number of Floors</th>
+            <th>Building Area</th>
+            <th>Description</th>
+            <th>Address</th>
+        </tr>
+        {% if projects %}
+        {% for project in projects %}
+        <tr>
+            <td>{{ project.building_name }}</td>
+            <td>{{ project.building_type }}</td>
+            <td>{{ project.dimension }}</td>
+            <td>{{ project.num_floors }}</td>
+            <td>{{ project.building_area }}</td>
+            <td>{{ project.description }}</td>
+            <td>{{ project.address }}</td>
+        </tr>
+        {% endfor %}
+        {% else %}
+        <tr>
+            <td colspan="7">No projects found</td>
+        </tr>
+        {% endif %}
+    </table>
+    <script>
+        function logout() {
+            window.location.href = "/";
+        }
+    </script> 
+    </body>
+</html>

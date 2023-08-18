@@ -1,0 +1,47 @@
+<!--<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Login</h1>
+    <form method="POST">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <input type="submit" value="Login">
+        <input type="radio" id="client" name="user_type" value="client" >
+        <label for="client">Client</label>
+        <input type="radio" id="builder" name="user_type" value="builder">
+        <label for="builder">Builder</label>
+
+    </form>
+</body>
+</html>
+Client or builder login
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <title>Login Page</title>
+</head>
+<body>
+    <div class="log">
+    <h1>Login Page</h1>
+    
+    <a href="/client-login">
+        <button>client-login</button>
+    </a> 
+<br>
+     <a href="/builder-login">
+        <button>builder-login</button>
+    </a>
+    
+  </div>
+</body>
+
+</html>
