@@ -17,7 +17,7 @@ app = Flask(__name__)
 app.secret_key = 'your_secret_key'
 
 # MongoDB connection
-client = MongoClient('mongodb+srv://71762251013:pppass@cluster0.zeg44bk.mongodb.net/?retryWrites=true&w=majority')
+client = 
 db = client['construction_site']
 
 
@@ -337,23 +337,6 @@ def logout():
 
 
 
-
-
-
-
-
-'''building_id = request.args.get('building_id')
-    status_text = request.args.get('status_text')
-    status_image = request.args.get('status_image')
-    print(building_id)
-    if building_id:
-        # Get the building status from the database
-        building = db.building_status.find({'building_id': building_id , 'status_text': status_text, 'status_image': status_image})
-
-        return render_template('show_status.html', building_id=building_id, status_text=status_text, status_image=status_image)
-    else:
-        return 'Building not found'''
-    
 
 
 
